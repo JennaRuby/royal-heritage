@@ -142,23 +142,31 @@ nav a+a::before{
 
 .ht-rule{width:48px;height:1px;background:rgba(212,168,67,.35);margin:24px 0}
 .hero-right{display:flex;flex-direction:column;align-items:flex-end;gap:48px;padding-top:80px}
-.hero-desc{max-width:300px;text-align:right;font-size:14px;line-height:2;color:var(--muted);font-weight:300}
+.hero-desc{max-width:none;text-align:right;font-size:16px;line-height:1.9;color:var(--muted);font-weight:300;white-space:nowrap}
 .hero-btns{display:flex;flex-direction:column;gap:14px;align-items:flex-end}
 .btn-ph{font-family:var(--display);font-size:17px;letter-spacing:.18em;background:var(--gold);color:var(--black);padding:15px 44px;text-decoration:none;cursor:none;transition:all .35s cubic-bezier(.25,.46,.45,.94);display:inline-block;text-transform:uppercase}
 .btn-ph:hover{background:var(--off-white);letter-spacing:.28em}
 .hero-year-tag{position:absolute;right:48px;bottom:44px;z-index:10;font-family:var(--display);font-size:12px;letter-spacing:.4em;color:var(--muted);writing-mode:vertical-lr}
 
 /* ── DATA STRIP ── */
-.data-strip{background:var(--dim);border-top:1px solid rgba(237,232,223,.05);border-bottom:1px solid rgba(237,232,223,.05);padding:0 48px;height:64px;display:flex;align-items:center;position:relative;overflow:hidden}
-.ds-inner{display:flex;justify-content:space-between;align-items:center;width:100%}
-.ds-cell{display:flex;flex-direction:column;gap:3px;align-items:center}
-.ds-lbl{font-size:7px;letter-spacing:.45em;color:rgba(237,232,223,.18);font-family:monospace;text-transform:uppercase}
-.ds-val{font-family:var(--display);font-size:17px;letter-spacing:.2em;color:var(--off-white)}
-.ds-val.accent{color:var(--gold)}
-.ds-rule{width:1px;height:28px;background:rgba(237,232,223,.06)}
-.ds-scan{position:absolute;top:0;bottom:0;width:120px;pointer-events:none;background:linear-gradient(to right,transparent,rgba(212,168,67,.05),rgba(212,168,67,.09),rgba(212,168,67,.05),transparent);animation:dsScan 5s ease-in-out infinite}
-@keyframes dsScan{0%{left:-120px}100%{left:calc(100% + 120px)}}
-.ds-corner{font-family:monospace;font-size:10px;color:rgba(212,168,67,.25);letter-spacing:.1em}
+.data-strip{
+  border-top:1px solid rgba(212,168,67,.12);
+  border-bottom:1px solid rgba(212,168,67,.12);
+  padding:0 48px;height:56px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  background:rgba(8,8,12,.6);
+}
+.ds-inner{
+  display:flex;align-items:center;gap:0;
+  font-family:var(--serif);font-size:13px;font-weight:300;
+  color:rgba(237,232,223,.45);letter-spacing:.08em;white-space:nowrap;
+}
+.ds-item{display:inline-flex;align-items:center;gap:8px}
+.ds-item .hanja{font-size:17px;font-weight:700;color:var(--gold);font-family:'Gowun Batang',serif}
+.ds-item .kor{color:rgba(237,232,223,.6)}
+.ds-sep{display:inline-block;width:1px;height:16px;background:rgba(212,168,67,.2);margin:0 28px;vertical-align:middle;flex-shrink:0}
+.ds-rule,.ds-cell,.ds-lbl,.ds-val,.ds-corner,.ds-scan{display:none}
 
 /* ── PALACES ── */
 #palaces{padding:160px 48px;position:relative}
@@ -188,7 +196,7 @@ nav a+a::before{
 .section-tag{font-size:10px;letter-spacing:.5em;color:var(--gold);text-transform:uppercase;margin-bottom:24px;font-weight:500;display:flex;align-items:center;gap:14px}
 .section-tag::before{content:'';display:block;width:24px;height:1px;background:var(--gold)}
 .section-h{font-family:var(--serif);font-size:clamp(38px,5vw,68px);font-weight:900;line-height:1.1;letter-spacing:-.01em;margin-bottom:28px}
-.section-p{font-size:15px;line-height:1.9;color:var(--muted);font-weight:300;max-width:440px}
+.section-p{font-size:17px;line-height:2;color:var(--muted);font-weight:300;max-width:440px}
 .palace-scroll-outer{overflow-x:auto;margin:0 -48px;padding:0 48px;scrollbar-width:none}
 .palace-scroll-outer::-webkit-scrollbar{display:none}
 .palace-scroll-inner{display:flex;gap:20px;width:max-content;padding-bottom:24px}
@@ -232,11 +240,11 @@ nav a+a::before{
 .tomb-year{font-family:var(--display);font-size:12px;letter-spacing:.32em;color:var(--muted)}
 .tomb-stats-bottom{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(to top,rgba(8,8,12,.96) 0%,transparent 100%);display:flex;gap:28px;z-index:2}
 .ts-num{font-family:var(--display);font-size:42px;color:var(--off-white);line-height:1;font-variant-numeric:tabular-nums}
-.ts-lbl{font-size:8px;letter-spacing:.28em;color:var(--muted);text-transform:uppercase;margin-top:4px}
+.ts-lbl{font-size:13px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:6px;font-family:var(--sans)}
 .tomb-deco-box{position:absolute;width:55%;height:55%;border:1px solid rgba(212,168,67,.12);bottom:-18px;right:-18px;z-index:-1}
-.tomb-desc{font-size:15px;line-height:2;color:var(--muted);font-weight:300;margin-bottom:48px}
+.tomb-desc{font-size:17px;line-height:2;color:var(--muted);font-weight:300;margin-bottom:48px}
 .tomb-list{list-style:none;border-top:1px solid rgba(237,232,223,.06)}
-.tomb-list li{display:flex;justify-content:space-between;align-items:center;padding:17px 0;border-bottom:1px solid rgba(237,232,223,.05);font-size:14px;transition:color .3s;cursor:none}
+.tomb-list li{display:flex;justify-content:space-between;align-items:center;padding:17px 0;border-bottom:1px solid rgba(237,232,223,.05);font-size:16px;transition:color .3s;cursor:none}
 .tomb-list li:hover{color:var(--gold)}
 .tomb-list li span{font-family:var(--display);font-size:11px;letter-spacing:.2em;color:var(--muted)}
 .tomb-list li:hover span{color:var(--gold)}
@@ -282,7 +290,7 @@ nav a+a::before{
 .srb3{background:radial-gradient(ellipse at 50% 60%,rgba(140,100,200,.08) 0%,rgba(8,8,12,0.95) 65%),url('./assets/images/story-4-night.jpg') center/cover}
 .story-right-content{position:relative;z-index:2;padding:60px;transition:all .8s ease}
 .story-right-time{font-family:var(--display);font-size:13px;letter-spacing:.5em;color:var(--gold);margin-bottom:32px;text-transform:uppercase}
-.story-right-p{font-size:16px;line-height:2;color:rgba(237,232,223,.55);font-weight:300;max-width:380px}
+.story-right-p{font-size:18px;line-height:2;color:rgba(237,232,223,.55);font-weight:300;max-width:380px}
 .story-prog{position:absolute;right:36px;top:50%;transform:translateY(-50%);z-index:10;display:flex;flex-direction:column;gap:10px}
 .sp-d{width:3px;height:3px;border-radius:50%;background:rgba(237,232,223,.18);transition:all .3s;cursor:none}
 .sp-d.on{background:var(--gold);transform:scaleY(5) scaleX(1.2);border-radius:2px}
@@ -333,7 +341,7 @@ nav a+a::before{
   text-shadow:0 4px 15px rgba(0,0,0,0.6);
 }
 .cta-h .line-gold{display:block;font-family:var(--display);font-size:clamp(32px,5vw,80px);color:var(--off-white);letter-spacing:.32em;text-transform:uppercase;margin-top:16px;text-align:center}
-.cta-sub{font-size:17px;line-height:1.9;color:var(--off-white);font-weight:400;max-width:480px;margin:0 auto 64px}
+.cta-sub{font-size:19px;line-height:1.9;color:var(--off-white);font-weight:400;max-width:480px;margin:0 auto 64px}
 .cta-main-btn{font-family:var(--display);font-size:20px;letter-spacing:.32em;background:var(--gold);color:var(--black);padding:20px 68px;text-decoration:none;cursor:none;display:inline-block;transition:all .45s cubic-bezier(.25,.46,.45,.94);text-transform:uppercase}
 .cta-main-btn:hover{background:var(--off-white);letter-spacing:.5em;padding:20px 90px}
 .cta-footnote{margin-top:48px;font-size:10px;letter-spacing:.3em;color:rgba(237,232,223,.18);text-transform:uppercase}
@@ -381,8 +389,6 @@ footer{padding:56px 48px;border-top:1px solid rgba(237,232,223,.05);display:flex
 .mf-icon{width:22px;height:22px;stroke:rgba(212,168,67,0.7);stroke-width:1.4;fill:none;position:relative;z-index:1;transition:stroke .3s}
 .music-fab.on .mf-icon{stroke:var(--gold)}
 .music-fab:hover .mf-icon{stroke:rgba(237,232,223,0.9)}
-.music-tip{position:fixed;bottom:36px;left:84px;z-index:800;background:rgba(8,8,12,.88);border:1px solid rgba(212,168,67,.18);color:var(--gold);font-size:9px;letter-spacing:.32em;text-transform:uppercase;padding:7px 14px;pointer-events:none;opacity:0;transition:opacity .3s;backdrop-filter:blur(10px);white-space:nowrap}
-.music-fab:hover+.music-tip,.music-tip.show{opacity:1}
 
 /* REVEAL */
 .rv{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
@@ -439,17 +445,17 @@ footer{padding:56px 48px;border-top:1px solid rgba(237,232,223,.05);display:flex
     gap:20px;
     padding-top:0;
   }
-  .hero-desc{text-align:left;font-size:13px;max-width:100%}
+  .hero-desc{white-space:normal;max-width:100%;text-align:left;font-size:14px}
   .hero-btns{flex-direction:row;flex-wrap:wrap;gap:12px;align-items:flex-start}
   .btn-ph{font-size:13px;padding:12px 28px}
   .k-scroll-ind{left:20px;bottom:24px}
   .hero-year-tag{right:20px;bottom:24px;font-size:10px}
 
   /* ── DATA STRIP ── */
-  .data-strip{padding:0 16px;height:auto;overflow-x:auto}
-  .ds-inner{gap:12px;padding:12px 0;min-width:max-content}
-  .ds-val{font-size:13px}
-  .ds-corner{display:none}
+  .data-strip{padding:0 20px;height:48px;overflow-x:auto}
+  .ds-inner{font-size:11px;min-width:max-content}
+  .ds-item .hanja{font-size:13px}
+  .ds-sep{margin:0 14px}
 
   /* ── PALACES ── */
   #palaces{padding:80px 20px}
@@ -579,7 +585,6 @@ footer{padding:56px 48px;border-top:1px solid rgba(237,232,223,.05);display:flex
     </svg>
   </div>
 </div>
-<div class="music-tip" id="mTip">♪ 여민락 — 궁중음악</div>
 
 <section id="hero">
   <div class="hero-bg-img"></div>
@@ -593,29 +598,30 @@ footer{padding:56px 48px;border-top:1px solid rgba(237,232,223,.05);display:flex
       <div class="ht-rule"></div>
     </div>
     <div class="hero-right">
-      <p class="hero-desc">500년의 침묵이 깨집니다.<br>경복궁부터 조선왕릉까지, 전통이 가장 혁신적인 방식으로 당신을 만납니다.</p>
+      <p class="hero-desc">시대를 넘어 도심 속에 깊게 뿌리내린 궁궐의 숨결,<br>어제의 위대한 문화유산이 오늘 살아 숨 쉬는 공간으로 깨어납니다.</p>
       <div class="hero-btns">
         <a href="#palaces" class="btn-ph">탐방 시작하기</a>
       </div>
     </div>
   </div>
 
-  <div class="hero-year-tag">JOSEON · 1392—1897</div>
+  <div class="hero-year-tag">JOSEON · 1392—1910</div>
 </section>
 
 <div class="data-strip">
-  <span class="ds-corner">[ KR ]</span>
   <div class="ds-inner">
-    <div class="ds-cell"><span class="ds-lbl">Dynasty</span><span class="ds-val accent">朝鮮</span></div><div class="ds-rule"></div>
-    <div class="ds-cell"><span class="ds-lbl">Palaces</span><span class="ds-val">×05</span></div><div class="ds-rule"></div>
-    <div class="ds-cell"><span class="ds-lbl">Royal Tombs</span><span class="ds-val">×42</span></div><div class="ds-rule"></div>
-    <div class="ds-cell"><span class="ds-lbl">UNESCO</span><span class="ds-val accent">×02</span></div><div class="ds-rule"></div>
-    <div class="ds-cell"><span class="ds-lbl">Established</span><span class="ds-val">1392</span></div><div class="ds-rule"></div>
-    <div class="ds-cell"><span class="ds-lbl">Duration</span><span class="ds-val">518 YRS</span></div><div class="ds-rule"></div>
-    <div class="ds-cell"><span class="ds-lbl">Status</span><span class="ds-val accent">LIVE</span></div>
+    <span class="ds-item"><span class="hanja">朝鮮</span><span class="kor">왕조</span></span>
+    <span class="ds-sep"></span>
+    <span class="ds-item"><span class="hanja">五</span><span class="kor">개 궁궐</span></span>
+    <span class="ds-sep"></span>
+    <span class="ds-item"><span class="hanja">四十二</span><span class="kor">기 왕릉</span></span>
+    <span class="ds-sep"></span>
+    <span class="ds-item"><span class="kor">유네스코 세계유산</span><span class="hanja" style="font-size:14px">三</span><span class="kor">건</span></span>
+    <span class="ds-sep"></span>
+    <span class="ds-item"><span class="kor">개국</span><span class="hanja" style="font-size:14px;letter-spacing:.04em">1392</span></span>
+    <span class="ds-sep"></span>
+    <span class="ds-item"><span class="kor">상시 개방</span></span>
   </div>
-  <span class="ds-corner">[ END ]</span>
-  <div class="ds-scan"></div>
 </div>
 
 <section id="palaces">
@@ -624,16 +630,17 @@ footer{padding:56px 48px;border-top:1px solid rgba(237,232,223,.05);display:flex
     <div class="palaces-header-text rv">
       <p class="section-tag">Royal Palaces</p>
       <h2 class="section-h">다섯 개의<br>왕의 집</h2>
-      <p class="section-p">조선이 500년간 품어온 다섯 궁궐. 하나하나가 하나의 세계입니다.</p>
+      <p class="section-p">조선 왕조의 다섯 궁궐,<br>
+하나하나가 저마다 고유한 역사적 서사를 품고 있습니다.</p>
     </div>
   </div>
   <div class="palace-scroll-outer rv">
     <div class="palace-scroll-inner">
-      <div class="pal-card pc0"><div class="pal-card-top"><span class="pal-card-num">01 /</span><span class="pal-card-tag">법궁</span></div><div class="pal-card-info"><div class="pal-card-name">경복궁</div><div class="pal-card-en">Gyeongbokgung</div></div></div>
-      <div class="pal-card pc1"><div class="pal-card-top"><span class="pal-card-num">02 /</span><span class="pal-card-tag">UNESCO</span></div><div class="pal-card-info"><div class="pal-card-name">창덕궁</div><div class="pal-card-en">Changdeokgung</div></div></div>
-      <div class="pal-card pc2"><div class="pal-card-top"><span class="pal-card-num">03 /</span><span class="pal-card-tag">이궁</span></div><div class="pal-card-info"><div class="pal-card-name">덕수궁</div><div class="pal-card-en">Deoksugung</div></div></div>
-      <div class="pal-card pc3"><div class="pal-card-top"><span class="pal-card-num">04 /</span><span class="pal-card-tag">이궁</span></div><div class="pal-card-info"><div class="pal-card-name">창경궁</div><div class="pal-card-en">Changgyeonggung</div></div></div>
-      <div class="pal-card pc4"><div class="pal-card-top"><span class="pal-card-num">05 /</span><span class="pal-card-tag">UNESCO</span></div><div class="pal-card-info"><div class="pal-card-name">종묘</div><div class="pal-card-en">Jongmyo Shrine</div></div></div>
+      <div class="pal-card pc0"><div class="pal-card-top"><span class="pal-card-num">01 /</span></div><div class="pal-card-info"><div class="pal-card-name">경복궁</div><div class="pal-card-en">Gyeongbokgung</div></div></div>
+      <div class="pal-card pc1"><div class="pal-card-top"><span class="pal-card-num">02 /</span></div><div class="pal-card-info"><div class="pal-card-name">창덕궁</div><div class="pal-card-en">Changdeokgung</div></div></div>
+      <div class="pal-card pc2"><div class="pal-card-top"><span class="pal-card-num">03 /</span></div><div class="pal-card-info"><div class="pal-card-name">덕수궁</div><div class="pal-card-en">Deoksugung</div></div></div>
+      <div class="pal-card pc3"><div class="pal-card-top"><span class="pal-card-num">04 /</span></div><div class="pal-card-info"><div class="pal-card-name">창경궁</div><div class="pal-card-en">Changgyeonggung</div></div></div>
+      <div class="pal-card pc4"><div class="pal-card-top"><span class="pal-card-num">05 /</span></div><div class="pal-card-info"><div class="pal-card-name">경희궁</div><div class="pal-card-en">Gyeonghuigung</div></div></div>
     </div>
   </div>
 </section>
@@ -641,10 +648,10 @@ footer{padding:56px 48px;border-top:1px solid rgba(237,232,223,.05);display:flex
 <section id="statement">
   <div class="stmt-side rv">Heritage × Now</div>
   <div class="stmt-text rv rv-d1">
-    전통은 <strong>과거에 속하지 않습니다.</strong><br>
-    궁궐의 단청이 오늘의 색깔이 되고,<br>
-    빛이 나는 <em>비취</em>가 됩니다.<br>
-    역사는 지금도 <strong>흐를까 말까 고민듕</strong>
+    조선 왕조의 숨결이 깃든 <strong>궁궐과 왕릉,</strong><br>
+    대한민국의 가장 고귀한 시간이<br>
+    이곳에 머물러 있습니다.<br>
+    <strong>위대한 유산</strong>의 가치를 온전히 내일로 전합니다.
   </div>
 </section>
 
@@ -652,7 +659,7 @@ footer{padding:56px 48px;border-top:1px solid rgba(237,232,223,.05);display:flex
   <div class="tomb-visual rv rv-l">
     <div class="tomb-main-box">
       <div class="tomb-badge-wrap">
-        <span class="tomb-badge">UNESCO 2009</span>
+        <span class="tomb-badge">UNESCO 세계유산 2009</span>
         <span class="tomb-year">1392—</span>
       </div>
       <div class="tomb-stats-bottom">
@@ -666,7 +673,7 @@ footer{padding:56px 48px;border-top:1px solid rgba(237,232,223,.05);display:flex
   <div class="rv rv-r">
     <p class="section-tag">Royal Tombs · 조선왕릉</p>
     <h2 class="section-h">왕이 잠든<br>세계의 유산</h2>
-    <p class="tomb-desc">2009년 유네스코 세계문화유산. 42기의 왕릉은 단순한 무덤이 아닙니다. 조선왕조 500년의 철학, 예술, 과학이 응집된 살아있는 공간입니다.</p>
+    <p class="tomb-desc">2009년 유네스코 세계문화유산에 등재된 조선왕릉. 단순한 무덤이 아닌, 조선왕조 518년의 철학·예술·과학이 응집된 살아있는 공간입니다.</p>
     <ul class="tomb-list">
       <li>건원릉 — 태조 이성계 <span>1408</span></li>
       <li>영릉 — 세종대왕 <span>1469</span></li>
@@ -706,7 +713,7 @@ footer{padding:56px 48px;border-top:1px solid rgba(237,232,223,.05);display:flex
         <div class="story-right-bg srb3" id="srb3" style="opacity:0;position:absolute;inset:0"></div>
         <div class="story-right-content">
           <p class="story-right-time" id="stTime">00:00 — 광화문 개문</p>
-          <p class="story-right-p" id="stP">500년 전 이 순간, 수문장이 북을 치면 하루가 시작되었습니다. 그 새벽의 에너지가 지금도 광화문 앞에 살아있습니다.</p>
+          <p class="story-right-p" id="stP">518년 전 이 순간, 수문장이 북을 치면 하루가 시작되었습니다. 그 새벽의 에너지가 지금도 광화문 앞에 살아있습니다.</p>
         </div>
         <div class="story-prog">
           <div class="sp-d on" id="sd0"></div>
@@ -737,7 +744,8 @@ footer{padding:56px 48px;border-top:1px solid rgba(237,232,223,.05);display:flex
       <span class="line-normal">역사의 한 곳에</span>
       <span class="line-outline">서다</span>
     </div>
-    <p class="cta-sub rv rv-d2">관람 예약부터 특별 행사까지. 지금, 500년의 역사 속으로 걸어들어가세요.</p>
+    <p class="cta-sub rv rv-d2">관람 예약부터 특별 행사까지.<br>
+지금, 역사 속으로 걸어들어가세요.</p>
     <a href="#" class="cta-main-btn rv rv-d3">관람 예약하기</a>
     <p class="cta-footnote rv rv-d4">Korea Heritage Service · 국가유산청 궁능유적본부</p>
   </div>
@@ -789,7 +797,7 @@ const hdr=document.getElementById('hdr');
 window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>60),{passive:true});
 
 /* ── MUSIC ── */
-const mFab=document.getElementById('mFab'),mTip=document.getElementById('mTip'),mfIco=document.getElementById('mfIco');
+const mFab=document.getElementById('mFab'),mfIco=document.getElementById('mfIco');
 const bgm=document.getElementById('bgm');
 let mOn=false;
 
@@ -800,9 +808,7 @@ const icoPause=`<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="
 function setMusicOn(on){
   mOn=on;
   mFab.classList.toggle('on',on);
-  mTip.classList.toggle('show',on);
   mfIco.innerHTML=on?icoPause:icoPlay;
-  mTip.textContent=on?'♪ 재생 중 — 여민락':'♪ 여민락 — 궁중음악';
 }
 
 /* 자동재생 시도 — 페이지 로드 즉시 */
@@ -874,9 +880,9 @@ const srbs=[document.getElementById('srb0'),document.getElementById('srb1'),docu
 const sdots=[document.getElementById('sd0'),document.getElementById('sd1'),document.getElementById('sd2'),document.getElementById('sd3')];
 const slides=[
   /* 子時(자시) 23:00–01:00 — 자정, 광화문 개문 */
-  {num:'子',label:'새벽 · Before Dawn',h:'광화문이<br><span>열린다</span>',time:'00:00 — 광화문 개문',p:'500년 전 이 순간, 수문장이 북을 치면 하루가 시작되었습니다. 그 새벽의 에너지가 지금도 광화문 앞에 살아있습니다.'},
+  {num:'子',label:'새벽 · Before Dawn',h:'광화문이<br><span>열린다</span>',time:'00:00 — 광화문 개문',p:'518년 전 이 순간, 수문장이 북을 치면 하루가 시작되었습니다. 그 새벽의 에너지가 지금도 광화문 앞에 살아있습니다.'},
   /* 午時(오시) 11:00–13:00 — 정오, 근정전 조정 */
-  {num:'午',label:'낮 · Daytime',h:'왕과 신하의<br><span>시간</span>',time:'12:00 — 근정전 조정',p:'근정전의 돌계단 위, 역사의 무게가 발바닥에 전해집니다. 이곳에서 조선 500년의 결정이 이루어졌습니다.'},
+  {num:'午',label:'낮 · Daytime',h:'왕과 신하의<br><span>시간</span>',time:'12:00 — 근정전 조정',p:'근정전의 돌계단 위, 역사의 무게가 발바닥에 전해집니다. 이곳에서 조선 518년의 결정이 이루어졌습니다.'},
   /* 酉時(유시) 17:00–19:00 — 저녁, 야간 개장 */
   {num:'酉',label:'저녁 · Dusk',h:'단청에<br><span>물드는 노을</span>',time:'18:00 — 야간 개장',p:'해가 지면 궁궐은 완전히 다른 공간이 됩니다. 조명을 받은 단청의 빛깔은 낮보다 더 선명하고 강렬합니다.'},
   /* 亥時(해시) 21:00–23:00 — 밤, 수문장 귀가 */
